@@ -1,3 +1,5 @@
+## as student AAAAAAAAAAAA
+## as studentt BBBBBBBBBBBB <3 <3 <3
 expenses = []
 
 def add_expense():
