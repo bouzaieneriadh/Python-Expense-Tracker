@@ -1,5 +1,3 @@
-## as student AAAAAAAAAAAA
-## as studentt BBBBBBBBBBBB <3 <3 <3
 expenses = []
 
 def add_expense():
@@ -24,6 +22,14 @@ def show_total():
         total+=expense["amount"]
     print(f"Total: {total:.2f}")
 
+def show_average():
+    if not expenses:
+        print("No expenses recorded.")
+        return
+    total = sum(item["amount"] for item in expenses)
+    average = total / len(expenses)
+    print(f"Average expense: {average:.2f}")
+
 def main():
     while True:
         print("\n===== EXPENSE TRACKER =====")
@@ -31,6 +37,7 @@ def main():
         print("2.View expenses")
         print("3.Show total")
         print("4.Exit")
+        print("5. Show average")
         choice = input("Your choice: ")
         if choice == "1":
             add_expense()
@@ -41,6 +48,8 @@ def main():
         elif choice == "4":
             print("Goodbye!")
             break
+        elif choice == "5":
+            show_average()
         else:
             print("Invalid choice.")
 
